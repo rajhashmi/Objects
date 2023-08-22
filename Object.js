@@ -232,3 +232,13 @@ let highestSalary = empSalary.reduce((acum,value)=>{
 },-Infinity);
 
 console.log(highestSalary);
+
+// Filter Employees by Age
+
+let filterEmployees = empSalary.filter(({ age }) => {
+    return age > 25;
+  });
+  
+  console.log(filterEmployees);
+  
+  
