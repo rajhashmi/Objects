@@ -221,3 +221,14 @@ let empSalary = [
     return acum
   },0)
   console.log(salary);
+
+// Find Highest Salary:
+
+let highestSalary = empSalary.reduce((acum,value)=>{
+    if(value.salary > acum){
+        acum = value.salary
+    }
+    return acum
+},-Infinity);
+
+console.log(highestSalary);
