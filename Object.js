@@ -184,4 +184,40 @@ function Construct(tittle){
     }
     console.log(obj);
 }
+// ============================================== using method in objects ========================================================
 
+let empSalary = [
+    {
+      name: "John Doe",
+      age: 30,
+      salary: 60000
+    },
+    {
+      name: "Jane Smith",
+      age: 25,
+      salary: 55000
+    },
+    {
+      name: "Michael Johnson",
+      age: 40,
+      salary: 75000
+    },
+    {
+      name: "Emily Brown",
+      age: 28,
+      salary: 62000
+    },
+    {
+      name: "David Wilson",
+      age: 32,
+      salary: 68000
+    }
+  ];
+
+
+
+  let salary = empSalary.reduce((acum,value)=>{
+    acum += value.salary
+    return acum
+  },0)
+  console.log(salary);
