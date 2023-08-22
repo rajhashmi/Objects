@@ -99,11 +99,11 @@ function Construct(tittle){
 
     let obj = {number: 10};
      let obj2 = obj
-     console.log(obj);
-     console.log(obj2);
+    //  console.log(obj);
+    //  console.log(obj2);
      obj2.number = 15
-     console.log(obj);
-     console.log(obj2);
+    //  console.log(obj);
+    //  console.log(obj2);
 
     //   this is becausse object pass the reference like we are not cloning the object we re just passing the addreass of it
 
@@ -122,5 +122,66 @@ function Construct(tittle){
 
 
 
+}
+
+{
+    const array = [
+        { key: 'name', value: 'Alice' },
+        { key: 'age', value: 25 },
+        { key: 'country', value: 'USA' },
+        { key: 'gender', value: 'male' }
+      ];
+      let obj = {};
+      for(let i = 0; i< array.length;i++){
+        const item = array[i]
+        obj[item.key] = item.value
+    }
+    console.log(obj);
+}
+
+
+{
+    let arrs = ["a", "b", "c", "d", "e", "f", "g"];
+    let obj = {};
+    for(let arr in arrs){
+        obj[arr] = arrs[arr]
+    }
+    console.log(obj);
+}
+
+{
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let obj = {};
+    for(const letter of alphabet){
+        if(!obj[letter]){
+            obj[letter] = true
+        }
+    }
+
+    console.log(Object.keys(obj));
+}
+
+{
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let obj = {};
+    for(let i= 0; i< alphabet.length;i++){
+        const letter = alphabet[i];
+        obj[i+1] = letter
+    }
+    console.log(obj);
+}
+
+{
+    const alphabetArray = ["a","a", "b", "c", "d", "e", "c", "f", "b", "g"];
+    let obj = {};
+    let counter = 1
+    for(let letter of alphabetArray){
+        
+        if(!obj[letter]){
+            obj[letter] = counter
+            counter++
+        }
+    }
+    console.log(obj);
 }
 
