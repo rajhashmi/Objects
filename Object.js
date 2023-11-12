@@ -35,7 +35,7 @@
     // console.log(obj.myInformation());
 }
 
-// Factory Functoin 
+// Factory Functoin
 
 function factoryFunction(tittle){
     return {
@@ -45,7 +45,7 @@ function factoryFunction(tittle){
         }
     }
 }
- 
+
 {
     let obj = factoryFunction("javaScript");
     // console.log(obj.title);
@@ -60,7 +60,6 @@ function Construct(tittle){
     }
 }
 
-
 {
     let obj = new Construct("I love javaScript")
     obj.newFunctoin = function(){
@@ -70,20 +69,19 @@ function Construct(tittle){
 }
 
 {
-    // constructor Function 
+    // constructor Function
     function Intro(name){
         this.name = name;
         console.log(this.name);
     }
 
-    //  making with construtor Function 
+    //  making with construtor Function
     const Intro_2 =  new Function('name',`
     this.name = name;
     console.log(this.name);
     `)
     console.log(typeof Intro_2);
 }
-
 
 {
     // passing by value;
@@ -111,7 +109,7 @@ function Construct(tittle){
 
 {
 
-    // let clone the object 
+    // let clone the object
 
     let obj = {number:10}
     // this is first way to do
@@ -119,8 +117,6 @@ function Construct(tittle){
     // this is second way to do;
 
     let obj3 = Object.assign({},obj)
-
-
 
 }
 
@@ -138,7 +134,6 @@ function Construct(tittle){
     }
     console.log(obj);
 }
-
 
 {
     let arrs = ["a", "b", "c", "d", "e", "f", "g"];
@@ -176,72 +171,36 @@ function Construct(tittle){
     let obj = {};
     let counter = 1
     for(let letter of alphabetArray){
-        
+
         if(!obj[letter]){
             obj[letter] = counter
             counter++
         }
     }
     console.log(obj);
+} 
+
+
+// object chaning
+
+class User{
+    constructor(email,username){
+        this.email = email;
+        this.username = username;
+        this.score = 0;
+    }
+    login(){
+        console.log(`${this.username}, just login in`);
+        return this
+    }
+    logout(){
+        console.log(`${this.username} just logout`);
+        return this
+    }
+    updateScore(){
+        console.log(this.score++);
+        return this
+    }
 }
-// ============================================== using method in objects ========================================================
-
-let empSalary = [
-    {
-      name: "John Doe",
-      age: 30,
-      salary: 60000
-    },
-    {
-      name: "Jane Smith",
-      age: 25,
-      salary: 55000
-    },
-    {
-      name: "Michael Johnson",
-      age: 40,
-      salary: 75000
-    },
-    {
-      name: "Emily Brown",
-      age: 28,
-      salary: 62000
-    },
-    {
-      name: "David Wilson",
-      age: 32,
-      salary: 68000
-    }
-  ];
-
-
-
-  let salary = empSalary.reduce((acum,value)=>{
-    acum += value.salary
-    return acum
-  },0)
-  console.log(salary);
-
-// Find Highest Salary:
-
-let highestSalary = empSalary.reduce((acum,value)=>{
-    if(value.salary > acum){
-        acum = value.salary
-    }
-    return acum
-},-Infinity);
-
-console.log(highestSalary);
-
-// Filter Employees by Age
-
-let filterEmployees = empSalary.filter(({ age }) => {
-    return age > 25;
-  });
-  
-  console.log(filterEmployees);
-  
-  
-let arr = [1,2,3,4,5,3,2,1,4,5];
-let  set = new Set(arr);
-console.log(set);
+let userOne = new User("shahidhashmiraj@gmail.com", "shahid hashmi");
+console.log(userOne)
